@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifdef __DEBUG__
+
 #define __ASSERT__(condition, fmt, ...)          \
   do                                             \
   {                                              \
@@ -20,6 +22,14 @@
 
 #define __UNREACHABLE__() \
   __ASSERT__(0, "%s:%d: [PANIC]: How did we get here...?", __FILE__, __LINE__)
+
+#else
+
+#define __ASSERT__(condition, fmt, ...) ((void) 0)
+#define __TODO__() ((void) 0)
+#define __UNREACHABLE__() ((void) 0)
+
+#endif // ifdef __DEBUG__
 
 #endif // ifndef CAFFEINE_ASSERT_H_
 

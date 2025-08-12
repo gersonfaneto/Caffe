@@ -1,8 +1,9 @@
 #ifndef CAFFEINE_LIST_H_
 #define CAFFEINE_LIST_H_
 
-#include <caffeine/core/types.h>
+#include <caffeine/core/assert.h>
 #include <caffeine/core/macros.h>
+#include <caffeine/core/types.h>
 
 #include <stddef.h>
 
