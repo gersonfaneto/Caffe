@@ -5,16 +5,9 @@
 #include <caffeine/core/macros.h>
 #include <caffeine/core/types.h>
 
+#include <caffeine/containers/node.h>
+
 #include <stddef.h>
-
-typedef struct node_t node_t;
-
-struct node_t
-{
-	node_t* __next;
-	var     __data;
-	usize   __size;
-};
 
 typedef struct list_t list_t;
 
