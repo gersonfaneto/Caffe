@@ -1,5 +1,5 @@
-#ifndef CAFFEINE_TYPES_H_
-#define CAFFEINE_TYPES_H_
+#ifndef CAFFE_TYPES_H_
+#define CAFFE_TYPES_H_
 
 #include <stdint.h>
 
@@ -20,6 +20,6 @@ typedef void* var;
 
 typedef uint64_t usize;
 
-#endif // ifndef CAFFEINE_TYPES_H_
+#endif // ifndef CAFFE_TYPES_H_
 
 // vim:sw=2:ts=2:et:

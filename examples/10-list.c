@@ -1,7 +1,7 @@
-#define CAFFEINE_LIST_IMPLEMENTATION
+#define CAFFE_LIST_IMPLEMENTATION
 
-#include <caffeine/core/types.h>
-#include <caffeine/containers/list.h>
+#include <caffe/core/types.h>
+#include <caffe/containers/list.h>
 
 #include <stdio.h>
 

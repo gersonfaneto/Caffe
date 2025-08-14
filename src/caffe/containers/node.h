@@ -1,7 +1,7 @@
-#ifndef CAFFEINE_NODE_H_
-#define CAFFEINE_NODE_H_
+#ifndef CAFFE_NODE_H_
+#define CAFFE_NODE_H_
 
-#include <caffeine/core/types.h>
+#include <caffe/core/types.h>
 
 typedef struct node_t node_t;
 
@@ -16,7 +16,7 @@ node_t* node_init(var data, usize size);
 
 void node_deinit(node_t* node);
 
-#ifdef CAFFEINE_NODE_IMPLEMENTATION
+#ifdef CAFFE_NODE_IMPLEMENTATION
 
 node_t* node_init(var data, usize size)
 {
@@ -31,6 +31,6 @@ void node_deinit(node_t* node)
   __TODO__();
 }
 
-#endif // ifdef CAFFEINE_NODE_IMPLEMENTATION
+#endif // ifdef CAFFE_NODE_IMPLEMENTATION
 
-#endif // ifndef CAFFEINE_NODE_H_
+#endif // ifndef CAFFE_NODE_H_
