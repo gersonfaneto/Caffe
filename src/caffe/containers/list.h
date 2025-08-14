@@ -1,11 +1,11 @@
-#ifndef CAFFEINE_LIST_H_
-#define CAFFEINE_LIST_H_
+#ifndef CAFFE_LIST_H_
+#define CAFFE_LIST_H_
 
-#include <caffeine/core/assert.h>
-#include <caffeine/core/macros.h>
-#include <caffeine/core/types.h>
+#include <caffe/core/assert.h>
+#include <caffe/core/macros.h>
+#include <caffe/core/types.h>
 
-#include <caffeine/containers/node.h>
+#include <caffe/containers/node.h>
 
 #include <stddef.h>
 
@@ -24,7 +24,7 @@ struct list_t
 
 list_t list_init(void);
 
-#ifdef CAFFEINE_LIST_IMPLEMENTATION
+#ifdef CAFFE_LIST_IMPLEMENTATION
 
 void list_clear(list_t* self)
 {
@@ -70,8 +70,8 @@ list_t list_init(void)
   };
 }
 
-#endif // ifdef CAFFEINE_LIST_IMPLEMENTATION
+#endif // ifdef CAFFE_LIST_IMPLEMENTATION
 
-#endif // ifndef CAFFEINE_LIST_H_
+#endif // ifndef CAFFE_LIST_H_
 
 // vim:sw=2:ts=2:et:

@@ -1,5 +1,5 @@
-#ifndef CAFFEINE_ASSERT_H_
-#define CAFFEINE_ASSERT_H_
+#ifndef CAFFE_ASSERT_H_
+#define CAFFE_ASSERT_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,6 +31,6 @@
 
 #endif // ifdef __DEBUG__
 
-#endif // ifndef CAFFEINE_ASSERT_H_
+#endif // ifndef CAFFE_ASSERT_H_
 
 // vim:sw=2:ts=2:et:
