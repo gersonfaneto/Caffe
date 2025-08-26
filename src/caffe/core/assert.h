@@ -6,16 +6,15 @@
 
 #ifdef __DEBUG__
 
-#define __ASSERT__(condition, fmt, ...)          \
-  do                                             \
-  {                                              \
-    if (!(condition))                            \
-    {                                            \
-      fprintf(stderr, fmt "\n", ##__VA_ARGS__);  \
-      exit(1);                                   \
-    }                                            \
-  }                                              \
-  while (0);                                     \
+#define __ASSERT__(condition, fmt, ...)         \
+  do                                            \
+  {                                             \
+    if (!(condition))                           \
+    {                                           \
+      fprintf(stderr, fmt "\n", ##__VA_ARGS__); \
+      exit(1);                                  \
+    }                                           \
+  } while (0);
 
 #define __TODO__() \
   __ASSERT__(0, "%s:%d: [TODO]: Something is missing...", __FILE__, __LINE__)
@@ -25,9 +24,9 @@
 
 #else
 
-#define __ASSERT__(condition, fmt, ...) ((void) 0)
-#define __TODO__() ((void) 0)
-#define __UNREACHABLE__() ((void) 0)
+#define __ASSERT__(condition, fmt, ...) (( void )0)
+#define __TODO__() (( void )0)
+#define __UNREACHABLE__() (( void )0)
 
 #endif // ifdef __DEBUG__
 
