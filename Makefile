@@ -6,6 +6,11 @@ all:
 	cc -o .build/10-list examples/10-list.c -I src/ $(CFLAGS) && .build/10-list
 
 
+compilation-db:
+	[[ ! -d .build/ ]] && mkdir .build || exit 0
+	bear --output .build/compile_commands.json -- $(MAKE)
+
+
 format:
 	find -type f -name '*.[c|h]' -exec clang-format --verbose -i {} \;
 
