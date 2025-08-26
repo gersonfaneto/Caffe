@@ -1,7 +1,15 @@
 #ifndef CAFFE_NODE_H_
 #define CAFFE_NODE_H_
 
+#ifndef CAFFE_UNPACKED
+
 #include <caffe/core/types.h>
+
+#else
+
+#include "types.h"
+
+#endif // ifndef CAFFE_UNPACKED
 
 typedef struct node_t node_t;
 

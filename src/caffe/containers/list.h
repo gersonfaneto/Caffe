@@ -1,13 +1,26 @@
 #ifndef CAFFE_LIST_H_
 #define CAFFE_LIST_H_
 
+#ifndef CAFFE_UNPACKED
+
 #include <caffe/core/assert.h>
 #include <caffe/core/macros.h>
 #include <caffe/core/types.h>
 
 #include <caffe/containers/node.h>
 
+#else
+
+#include "assert.h"
+#include "macros.h"
+#include "types.h"
+
+#include "node.h"
+
+#endif // ifndef CAFFE_UNPACKED
+
 #include <stddef.h>
+#include <stdlib.h>
 
 typedef struct list_t list_t;
 
