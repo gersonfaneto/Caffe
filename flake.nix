@@ -20,6 +20,7 @@
       pkgs.mkShell {
         packages = with pkgs; [
           # C/C++ Tools
+          bear
           clang-tools
 
           # YAML Tools
