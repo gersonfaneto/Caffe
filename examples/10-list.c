@@ -21,10 +21,10 @@ int main(void)
   for (usize i = 0; i < (count / 2); ++i)
   {
     usize j = (count - i - 1);
-    var x = NULL;
+    var   x = NULL;
     list.retrieve(&list, j, &x);
     list.remove(&list, j);
-    printf("@%lu :: %d\n", j, *(int*) x);
+    printf("@%lu :: %d\n", j, *( int* )x);
     free(x);
   }
 
