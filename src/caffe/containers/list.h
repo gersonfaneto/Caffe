@@ -37,6 +37,12 @@ struct list_t
 
 list_t list_init(void);
 
+#ifdef CAFFE_ALL_IMPLEMENTATIONS
+
+#define CAFFE_LIST_IMPLEMENTATION
+
+#endif // ifdef CAFFE_ALL_IMPLEMENTATIONS
+
 #ifdef CAFFE_LIST_IMPLEMENTATION
 
 void list_clear(list_t* self)

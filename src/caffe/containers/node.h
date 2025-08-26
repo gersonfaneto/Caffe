@@ -24,6 +24,12 @@ node_t* node_init(var data, usize size);
 
 void node_deinit(node_t* node);
 
+#ifdef CAFFE_ALL_IMPLEMENTATIONS
+
+#define CAFFE_NODE_IMPLEMENTATION
+
+#endif // ifdef CAFFE_ALL_IMPLEMENTATIONS
+
 #ifdef CAFFE_NODE_IMPLEMENTATION
 
 node_t* node_init(var data, usize size)
