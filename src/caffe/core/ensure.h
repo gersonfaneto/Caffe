@@ -6,7 +6,7 @@
 
 #ifdef __DEBUG__
 
-#define __ASSERT__(condition, fmt, ...)                                       \
+#define __ENSURE__(condition, fmt, ...)                                       \
   do                                                                          \
   {                                                                           \
     if (!(condition))                                                         \
@@ -16,19 +16,30 @@
     }                                                                         \
   } while (0);
 
+#else
+
+#define __ENSURE__(condition, fmt, ...) (( void )0)
+
+#endif // ifdef __DEBUG__
+
+#ifdef CAFFE_ENSURE_EXTRAS
+
+#ifdef __DEBUG__
+
 #define __TODO__() \
-  __ASSERT__(0, "%s:%d: [TODO]: Something is missing...", __FILE__, __LINE__)
+  __ENSURE__(0, "%s:%d: [TODO]: Something is missing...", __FILE__, __LINE__)
 
 #define __UNREACHABLE__() \
-  __ASSERT__(0, "%s:%d: [PANIC]: How did we get here...?", __FILE__, __LINE__)
+  __ENSURE__(0, "%s:%d: [PANIC]: How did we get here...?", __FILE__, __LINE__)
 
 #else
 
-#define __ASSERT__(condition, fmt, ...) (( void )0)
 #define __TODO__() (( void )0)
 #define __UNREACHABLE__() (( void )0)
 
 #endif // ifdef __DEBUG__
+
+#endif // ifdef CAFFE_ENSURE_EXTRAS
 
 #endif // ifndef CAFFE_ASSERT_H_
 
