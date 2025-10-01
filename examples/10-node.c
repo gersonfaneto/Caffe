@@ -11,7 +11,7 @@ int main(void)
 
   node_t* node = node_init(msg, strlen(msg));
 
-  printf("%s\n", (char*) node->__data);
+  printf("%s\n", ( char* )node->__data);
 
   node_deinit(node);
 
