@@ -4,7 +4,7 @@ CFLAGS += -g -ggdb
 
 all:
 	@[[ ! -d .build/ ]] && mkdir .build || exit 0
-	@cc -o .build/10-node examples/10-node.c -I src/ $(CFLAGS) && .build/10-node 1> /dev/null
+	@cc -o .build/10-box examples/10-box.c -I src/ $(CFLAGS) && .build/10-box 1> /dev/null
 	@cc -o .build/11-list examples/11-list.c -I src/ $(CFLAGS) && .build/11-list 1> /dev/null
 
 

@@ -1,7 +1,7 @@
 #ifndef CAFFE_LIST_H_
 #define CAFFE_LIST_H_
 
-#define CAFFE_ENSURE_EXTRAS // TODO: Remove in production!
+#define CAFFE_ENSURE_EXTRAS // TODO: Remove on production!
 
 #ifndef CAFFE_UNPACKED
 
@@ -9,7 +9,7 @@
 #include <caffe/core/macros.h>
 #include <caffe/core/types.h>
 
-#include <caffe/containers/node.h>
+#include <caffe/containers/box.h>
 
 #else
 
@@ -17,7 +17,7 @@
 #include "macros.h"
 #include "types.h"
 
-#include "node.h"
+#include "box.h"
 
 #endif // ifndef CAFFE_UNPACKED
 
@@ -28,7 +28,7 @@ typedef struct list_t list_t;
 
 struct list_t
 {
-  node_t* __leader;
+  box_t* __leader;
   usize   __lenght;
 
   void (*clear)(list_t* self);
@@ -41,6 +41,7 @@ list_t list_init(void);
 
 #ifdef CAFFE_ALL_IMPLEMENTATIONS
 
+#define CAFFE_BOX_IMPLEMENTATION
 #define CAFFE_LIST_IMPLEMENTATION
 
 #endif // ifdef CAFFE_ALL_IMPLEMENTATIONS

@@ -2,7 +2,6 @@
 
 #include <caffe/core/types.h>
 #include <caffe/containers/list.h>
-#include <caffe/containers/node.h>
 
 #include <stdio.h>
 
