@@ -1,12 +1,18 @@
 #ifndef CAFFE_NODE_H_
 #define CAFFE_NODE_H_
 
+#include <string.h>
+
 #ifndef CAFFE_UNPACKED
 
+#include <caffe/core/assert.h>
+#include <caffe/core/macros.h>
 #include <caffe/core/types.h>
 
 #else
 
+#include "assert.h" // FIX: This can cause some trouble...
+#include "macros.h"
 #include "types.h"
 
 #endif // ifndef CAFFE_UNPACKED
@@ -34,15 +40,27 @@ void node_deinit(node_t* node);
 
 node_t* node_init(var data, usize size)
 {
-  __UNUSED__(data);
-  __UNUSED__(size);
-  __TODO__();
+  node_t* node = ( node_t* )malloc(sizeof(node_t));
+
+  __ASSERT__(node != NULL, "[ERROR]: Allocation failed!");
+
+  node->__size = size;
+
+  node->__data = malloc(size);
+
+  __ASSERT__(node->__data != NULL, "[ERROR]: Allocation failed!");
+
+  memcpy(node->__data, data, size);
+
+  return node;
 }
 
 void node_deinit(node_t* node)
 {
-  __UNUSED__(node);
-  __TODO__();
+  __ASSERT__(node != NULL, "[ERROR]: Invalid reference to object!");
+  __ASSERT__(node->__data != NULL, "[ERROR]: Invalid reference to object!");
+  free(node->__data);
+  free(node);
 }
 
 #endif // ifdef CAFFE_NODE_IMPLEMENTATION
