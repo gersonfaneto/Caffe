@@ -6,14 +6,14 @@
 
 #ifdef __DEBUG__
 
-#define __ASSERT__(condition, fmt, ...)         \
-  do                                            \
-  {                                             \
-    if (!(condition))                           \
-    {                                           \
-      fprintf(stderr, fmt "\n", ##__VA_ARGS__); \
-      exit(1);                                  \
-    }                                           \
+#define __ASSERT__(condition, fmt, ...)                                       \
+  do                                                                          \
+  {                                                                           \
+    if (!(condition))                                                         \
+    {                                                                         \
+      fprintf(stderr, "%s:%d: " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__); \
+      exit(1);                                                                \
+    }                                                                         \
   } while (0);
 
 #define __TODO__() \
