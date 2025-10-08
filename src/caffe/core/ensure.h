@@ -26,7 +26,7 @@
 
 #ifdef __DEBUG__
 
-#define __TODO__() \
+#define __FAIL__() __ENSURE__(0, "[WARN]: Should have seen this coming...")
 #define __TODO__() __ENSURE__(0, "[TODO]: Something is missing...")
 #define __UNREACHABLE__() __ENSURE__(0, "[PANIC]: How did we get here...?")
 
