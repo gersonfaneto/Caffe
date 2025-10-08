@@ -17,7 +17,7 @@ IndentCaseLabels: true
 SpaceBeforeParens: ControlStatements
 SpaceInEmptyParentheses: false
 SpacesInParentheses: false
-SpacesInCStyleCastParentheses: true
+SpacesInCStyleCastParentheses: false
 SpacesInContainerLiterals: true
 
 # Line length
@@ -35,3 +35,4 @@ AlignTrailingComments: true
 
 # Misc
 PointerAlignment: Left
+SpaceAfterCStyleCast: true

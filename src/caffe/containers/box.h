@@ -40,7 +40,7 @@ void box_deinit(box_t* box);
 
 box_t* box_init(var data, usize size)
 {
-  box_t* box = ( box_t* )malloc(sizeof(box_t));
+  box_t* box = (box_t*) malloc(sizeof(box_t));
 
   __ENSURE__(box != NULL, "[ERROR]: Allocation failed!");
 

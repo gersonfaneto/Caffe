@@ -24,7 +24,7 @@ int main(void)
     var   x = NULL;
     list.retrieve(&list, j, &x);
     list.remove(&list, j);
-    printf("@%lu :: %d\n", j, *( int* )x);
+    printf("@%lu :: %d\n", j, *(int*) x);
     free(x);
   }
 

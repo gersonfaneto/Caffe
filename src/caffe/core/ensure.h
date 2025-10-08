@@ -18,7 +18,7 @@
 
 #else
 
-#define __ENSURE__(condition, fmt, ...) (( void )0)
+#define __ENSURE__(condition, fmt, ...) ((void) 0)
 
 #endif // ifdef __DEBUG__
 
@@ -32,8 +32,8 @@
 
 #else
 
-#define __TODO__() (( void )0)
-#define __UNREACHABLE__() (( void )0)
+#define __TODO__() ((void) 0)
+#define __UNREACHABLE__() ((void) 0)
 
 #endif // ifdef __DEBUG__
 

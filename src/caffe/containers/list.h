@@ -29,7 +29,7 @@ typedef struct list_t list_t;
 struct list_t
 {
   box_t* __leader;
-  usize   __lenght;
+  usize  __lenght;
 
   void (*clear)(list_t* self);
   void (*insert)(list_t* self, var data, usize size, usize position);
@@ -80,7 +80,7 @@ void list_retrieve(list_t* self, usize position, var* store)
 
 list_t list_init(void)
 {
-  return ( list_t ){
+  return (list_t) {
       .__leader = NULL,
       .__lenght = 0,
 

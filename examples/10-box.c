@@ -11,7 +11,7 @@ int main(void)
 
   box_t* box = box_init(msg, strlen(msg));
 
-  printf("%s\n", ( char* )box->__data);
+  printf("%s\n", (char*) box->__data);
 
   box_deinit(box);
 
