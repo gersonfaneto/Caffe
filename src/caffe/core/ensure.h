@@ -27,10 +27,8 @@
 #ifdef __DEBUG__
 
 #define __TODO__() \
-  __ENSURE__(0, "%s:%d: [TODO]: Something is missing...", __FILE__, __LINE__)
-
-#define __UNREACHABLE__() \
-  __ENSURE__(0, "%s:%d: [PANIC]: How did we get here...?", __FILE__, __LINE__)
+#define __TODO__() __ENSURE__(0, "[TODO]: Something is missing...")
+#define __UNREACHABLE__() __ENSURE__(0, "[PANIC]: How did we get here...?")
 
 #else
 
