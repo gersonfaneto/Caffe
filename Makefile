@@ -1,21 +1,38 @@
-CFLAGS  = -Wall -Wextra -Wpedantic -Werror -std=gnu99
-CFLAGS += -D__DEBUG__
+CC ?= cc
+
+CFLAGS := -Wall -Wextra -Wpedantic -Werror
+CFLAGS += \
+	  # -Wno-redefined-macro
+
+CFLAGS += -std=gnu99
+CFLAGS += -Os
 CFLAGS += -g -ggdb
 
-all:
-	@[[ ! -d .build/ ]] && mkdir .build || exit 0
-	@cc -o .build/10-box examples/10-box.c -I src/ $(CFLAGS) && .build/10-box 1> /dev/null
-	@cc -o .build/11-list examples/11-list.c -I src/ $(CFLAGS) && .build/11-list 1> /dev/null
+CFLAGS += -I src/
 
+UFLAGS ?= -D__RELEASE__
 
-compilation-db:
-	@[[ ! -d .build/ ]] && mkdir .build || exit 0
-	@bear --output .build/compile_commands.json -- $(MAKE)
+.PHONY: help
+help:
+	@echo "Usage: make [compdb|build|run|clean]"
 
+.PHONY: build
+build:
+	@[[ ! -d ./dist/ ]] && mkdir ./dist/ || exit 0
+	@cc -o ./dist/10-box examples/10-box.c $(CFLAGS) $(UFLAGS)
+	@cc -o ./dist/11-list examples/11-list.c $(CFLAGS) $(UFLAGS)
 
-format:
-	@find -type f -name '*.[c|h]' -exec clang-format --verbose -i {} \;
+.PHONY: run
+run:
+	@[[ -d ./dist/ ]] && (exit 0) || (echo "Do 'make build' first!"; exit 1)
+	@./dist/10-box 1> /dev/null
+	@./dist/11-list 1> /dev/null
 
+.PHONY: compdb
+compdb:
+	@[[ ! -d ./.build/ ]] && mkdir ./.build/ || exit 0
+	@bear --output ./.build/compile_commands.json -- make build
 
+.PHONY: clean
 clean:
-	@rm -r -v .build/
+	rm -f -r -v ./.build ./dist
