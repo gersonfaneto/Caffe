@@ -1,4 +1,4 @@
-CC ?= cc
+CC     ?= cc
 
 CFLAGS := -Wall -Wextra -Wpedantic -Werror
 CFLAGS += \
@@ -32,6 +32,10 @@ run:
 compdb:
 	@[[ ! -d ./.build/ ]] && mkdir ./.build/ || exit 0
 	@bear --output ./.build/compile_commands.json -- make build
+
+.PHONY: format
+format:
+	find -type f -name '*.[c|h]' | xargs -I {} clang-format -i --verbose {}
 
 .PHONY: clean
 clean:
