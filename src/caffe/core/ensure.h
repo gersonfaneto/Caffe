@@ -22,7 +22,7 @@
 
 #endif // ifdef __DEBUG__
 
-#ifdef CAFFE_ENSURE_EXTRAS
+#ifdef __CAFE_DEBUG__
 
 #ifdef __DEBUG__
 

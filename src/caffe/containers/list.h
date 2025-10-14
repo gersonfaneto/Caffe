@@ -1,8 +1,6 @@
 #ifndef CAFFE_LIST_H_
 #define CAFFE_LIST_H_
 
-#define CAFFE_ENSURE_EXTRAS // TODO: Remove on production!
-
 #ifndef CAFFE_UNPACKED
 
 #include <caffe/core/ensure.h>

@@ -10,7 +10,7 @@ CFLAGS += -g -ggdb
 
 CFLAGS += -I src/
 
-UFLAGS ?= -D__RELEASE__
+UFLAGS ?= -D__DEBUG__ -D__CAFE_DEBUG__
 
 .PHONY: help
 help:
