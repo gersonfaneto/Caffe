@@ -1,3 +1,9 @@
+# Build
 dist/
 .build/
+
+# Nyx
 .direnv/
+
+# Clang Tools
+.clangd
