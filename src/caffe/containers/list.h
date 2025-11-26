@@ -1,15 +1,7 @@
 #ifndef CAFFE_LIST_H_
 #define CAFFE_LIST_H_
 
-#ifndef CAFFE_UNPACKED
-
-#include <caffe/core/ensure.h>
-#include <caffe/core/macros.h>
-#include <caffe/core/types.h>
-
-#include <caffe/containers/box.h>
-
-#else
+#ifdef CAFFE_UNPACKED
 
 #include "ensure.h"
 #include "macros.h"
@@ -17,10 +9,15 @@
 
 #include "box.h"
 
-#endif // ifndef CAFFE_UNPACKED
+#else
 
-#include <stddef.h>
-#include <stdlib.h>
+#include <caffe/core/ensure.h>
+#include <caffe/core/macros.h>
+#include <caffe/core/types.h>
+
+#include <caffe/containers/box.h>
+
+#endif // ifdef CAFFE_UNPACKED
 
 typedef struct list_t list_t;
 
@@ -37,14 +34,17 @@ struct list_t
 
 list_t list_init(void);
 
-#ifdef CAFFE_ALL_IMPLEMENTATIONS
+#ifdef CAFFE_FULL_IMPL
 
-#define CAFFE_BOX_IMPLEMENTATION
-#define CAFFE_LIST_IMPLEMENTATION
+#define CAFFE_BOX_IMPLe
+#define CAFFE_LIST_IMPL
 
-#endif // ifdef CAFFE_ALL_IMPLEMENTATIONS
+#endif // ifdef CAFFE_FULL_IMPL
 
-#ifdef CAFFE_LIST_IMPLEMENTATION
+#ifdef CAFFE_LIST_IMPL
+
+#include <stddef.h>
+#include <stdlib.h>
 
 void list_clear(list_t* self)
 {
@@ -89,7 +89,7 @@ list_t list_init(void)
   };
 }
 
-#endif // ifdef CAFFE_LIST_IMPLEMENTATION
+#endif // ifdef CAFFE_LIST_IMPL
 
 #endif // ifndef CAFFE_LIST_H_
 

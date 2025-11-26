@@ -1,9 +1,10 @@
-#define CAFFE_BOX_IMPLEMENTATION
+#define CAFFE_BOX_IMPL
 
 #include <caffe/core/types.h>
 #include <caffe/containers/box.h>
 
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {

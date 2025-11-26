@@ -1,6 +1,5 @@
-#define CAFFE_LIST_IMPLEMENTATION
+#define CAFFE_LIST_IMPL
 
-#include <caffe/core/types.h>
 #include <caffe/containers/list.h>
 
 #include <stdio.h>

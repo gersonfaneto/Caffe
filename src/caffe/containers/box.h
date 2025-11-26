@@ -1,21 +1,19 @@
 #ifndef CAFFE_BOX_H_
 #define CAFFE_BOX_H_
 
-#include <string.h>
-
-#ifndef CAFFE_UNPACKED
-
-#include <caffe/core/ensure.h>
-#include <caffe/core/macros.h>
-#include <caffe/core/types.h>
-
-#else
+#ifdef CAFFE_UNPACKED
 
 #include "ensure.h"
 #include "macros.h"
 #include "types.h"
 
-#endif // ifndef CAFFE_UNPACKED
+#else
+
+#include <caffe/core/ensure.h>
+#include <caffe/core/macros.h>
+#include <caffe/core/types.h>
+
+#endif // ifdef CAFFE_UNPACKED
 
 typedef struct box_t box_t;
 
@@ -30,13 +28,16 @@ box_t* box_init(var data, usize size);
 
 void box_deinit(box_t* box);
 
-#ifdef CAFFE_ALL_IMPLEMENTATIONS
+#ifdef CAFFE_FULL_IMPL
 
-#define CAFFE_BOX_IMPLEMENTATION
+#define CAFFE_BOX_IMPL
 
-#endif // ifdef CAFFE_ALL_IMPLEMENTATIONS
+#endif // ifdef CAFFE_FULL_IMPL
 
-#ifdef CAFFE_BOX_IMPLEMENTATION
+#ifdef CAFFE_BOX_IMPL
+
+#include <stdlib.h>
+#include <string.h>
 
 box_t* box_init(var data, usize size)
 {
@@ -63,6 +64,8 @@ void box_deinit(box_t* box)
   free(box);
 }
 
-#endif // ifdef CAFFE_BOX_IMPLEMENTATION
+#endif // ifdef CAFFE_BOX_IMPL
 
 #endif // ifndef CAFFE_BOX_H_
+
+// vim:sw=2:ts=2:et:
